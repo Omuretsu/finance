@@ -53,6 +53,8 @@ def percent(df):
 
 symbols = [
     "285A.T",
+    "1542.T",
+    "2702.T",
 ]
 
 

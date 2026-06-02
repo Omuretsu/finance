@@ -1,0 +1,29 @@
+def rename_columns(df):
+
+    return df.rename(columns={
+        "Open": "始値",
+        "High": "高値",
+        "Low": "安値",
+        "Close": "終値",
+        "Volume": "出来高",
+        "Dividends": "配当金",
+        "Stock Splits": "株式分割",
+        "OC_diff": "終値と始値の差（実数）",
+        "OC_pct": "終値と始値の差（%）",
+        "MA5": "移動平均5日",
+        "MA25": "移動平均25日",
+        "MA75": "移動平均75日",
+        "RSI7": "RSI短期(7)",
+        "RSI14": "RSI中期(14)",
+        "RSI28": "RSI長期(28)",
+        "MACD": "MACD",
+        "Signal": "シグナル",
+        "BB_upper1": "ボリンジャー上限(+1σ)",
+        "BB_lower1": "ボリンジャー下限(-1σ)",
+        "BB_upper2": "ボリンジャー上限(+2σ)",
+        "BB_lower2": "ボリンジャー下限(-2σ)",
+        "BB_upper3": "ボリンジャー上限(+3σ)",
+        "BB_lower3": "ボリンジャー下限(-3σ)",
+        "BB_MA25": "ボリンジャー中心線",
+        "BB_STD25": "25日間の標準偏差"
+    })

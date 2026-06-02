@@ -2,11 +2,11 @@ import yfinance as yf
 from datetime import datetime
 from pathlib import Path
 
-from rename import rename_columns
-from rsi import calc_rsi
-from macd import calc_macd
-from bollinger import calc_bollinger
-from percent import percent
+from indicators.rename import rename_columns
+from indicators.rsi import calc_rsi
+from indicators.macd import calc_macd
+from indicators.bollinger import calc_bollinger
+from indicators.percent import percent
 
 symbols = [
     "285A.T",

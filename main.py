@@ -4,7 +4,7 @@ from pathlib import Path
 
 from rename import rename_columns
 from rsi import calc_rsi
-from macd import calc_macd, signal
+from macd import calc_macd
 from bollinger import calc_bollinger
 from percent import percent
 

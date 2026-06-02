@@ -1,3 +1,4 @@
+from macd import calc_macd, signal
 import yfinance as yf
 from datetime import datetime
 from pathlib import Path
@@ -18,16 +19,6 @@ def calc_rsi(df, period):
     rsi = 100 - (100 / (1 + rs))
 
     return rsi
-
-
-def calc_macd(df):
-    ema12 = df['Close'].ewm(span=12, adjust=False).mean()
-    ema26 = df['Close'].ewm(span=26, adjust=False).mean()
-
-    macd = ema12 - ema26
-    signal = macd.ewm(span=9, adjust=False).mean()
-
-    return macd, signal
 
 
 def calc_bollinger(df, window=25, sigma=3):

@@ -5,19 +5,7 @@ from pathlib import Path
 from rename import rename_columns
 
 
-def calc_rsi(df, period):
-    delta = df['Close'].diff()
-
-    gain = delta.where(delta > 0, 0)
-    loss = -delta.where(delta < 0, 0)
-
-    avg_gain = gain.rolling(period).mean()
-    avg_loss = loss.rolling(period).mean()
-
-    rs = avg_gain / avg_loss
-    rsi = 100 - (100 / (1 + rs))
-
-    return rsi
+from rsi import calc_rsi
 
 
 def calc_macd(df):
@@ -54,7 +42,6 @@ def percent(df):
 symbols = [
     "285A.T",
     "1542.T",
-    "2702.T",
 ]
 
 

@@ -3,18 +3,10 @@ from datetime import datetime
 from pathlib import Path
 
 from rename import rename_columns
-
-
 from rsi import calc_rsi
 from macd import calc_macd, signal
 from bollinger import calc_bollinger
-
-
-def percent(df):
-    df['OC_diff'] = df['Close'] - df['Open']
-    df['OC_pct'] = (df['Close'] - df['Open']) / df['Open'] * 100
-    return df
-
+from percent import percent
 
 symbols = [
     "285A.T",

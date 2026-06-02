@@ -7,6 +7,7 @@ from indicators.rsi import calc_rsi
 from indicators.macd import calc_macd
 from indicators.bollinger import calc_bollinger
 from indicators.percent import percent
+from indicators.hlpercent import hlpercent
 
 symbols = [
     "285A.T",
@@ -20,6 +21,7 @@ def get_stock_data(symbol):
     df = ticker.history(period="1y")
 
     df = percent(df)
+    df = hlpercent(df)
 
     df['MA5'] = df['Close'].rolling(5).mean()
     df['MA25'] = df['Close'].rolling(25).mean()

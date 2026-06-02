@@ -1,4 +1,3 @@
-from bollinger import calc_bollinger
 import yfinance as yf
 from datetime import datetime
 from pathlib import Path
@@ -7,16 +6,8 @@ from rename import rename_columns
 
 
 from rsi import calc_rsi
-
-
-def calc_macd(df):
-    ema12 = df['Close'].ewm(span=12, adjust=False).mean()
-    ema26 = df['Close'].ewm(span=26, adjust=False).mean()
-
-    macd = ema12 - ema26
-    signal = macd.ewm(span=9, adjust=False).mean()
-
-    return macd, signal
+from macd import calc_macd, signal
+from bollinger import calc_bollinger
 
 
 def percent(df):

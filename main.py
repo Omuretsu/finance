@@ -3,14 +3,11 @@ from indicators.rename import rename_columns
 from utils.file_io import setup_save_dir
 from utils.time_utils import get_timestamp
 from formatter import prepare_ai_data
-
-symbols = [
-    "1542.T",
-]
+from symbols import SYMBOLS
 
 save_dir = setup_save_dir()
 
-for symbol in symbols:
+for symbol in SYMBOLS:
     df = get_stock_data(symbol)
     ai_df = prepare_ai_data(df)
     ai_df = rename_columns(ai_df)

@@ -8,11 +8,11 @@ from indicators.hlpercent import hlpercent
 from indicators.volume import Volume_ratio
 
 
-def get_stock_data(symbol):
+def get_stock_data(symbol, period="1y"):
     ticker = yf.Ticker(symbol)
 
     df = ticker.history(
-        period="1y",
+        period=period,
         auto_adjust=False
     )
     df = df.dropna(subset=["Close"])

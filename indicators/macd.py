@@ -4,5 +4,6 @@ def calc_macd(df):
 
     macd = ema12 - ema26
     signal = macd.ewm(span=9, adjust=False).mean()
+    macd_gap = macd - signal
 
-    return macd, signal
+    return macd, signal, macd_gap

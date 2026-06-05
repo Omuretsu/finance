@@ -10,4 +10,10 @@ def calc_bollinger(df, window=25, sigma=3):
 
     upper3 = bb_ma + (3 * bb_std)
     lower3 = bb_ma - (3 * bb_std)
+
+    df["BB_ZScore"] = (
+        (df["Close"] - bb_ma)
+        / bb_std
+    )
+
     return bb_ma, bb_std, upper1, lower1, upper2, lower2, upper3, lower3

@@ -3,3 +3,5 @@ SYMBOLS = [
 ]
 
 period = "6m"
+
+days = 100

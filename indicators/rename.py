@@ -21,6 +21,7 @@ def rename_columns(df):
         "RSI28": "RSI長期(28)",
         "MACD": "MACD",
         "Signal": "シグナル",
+        "MACD_Gap": "MACD差分",
         "BB_upper1": "ボリンジャー上限(+1σ)",
         "BB_lower1": "ボリンジャー下限(-1σ)",
         "BB_upper2": "ボリンジャー上限(+2σ)",
@@ -28,5 +29,8 @@ def rename_columns(df):
         "BB_upper3": "ボリンジャー上限(+3σ)",
         "BB_lower3": "ボリンジャー下限(-3σ)",
         "BB_MA25": "ボリンジャー中心線",
-        "BB_STD25": "25日間の標準偏差"
+        "BB_STD25": "25日間の標準偏差",
+        "BB_ZScore": "ボリンジャーZスコア",
+        "Volume":  "出来高",
+        "Volume_Ratio": "出来高25日比率(%)"
     })

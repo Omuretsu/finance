@@ -1,11 +1,11 @@
 import yfinance as yf
 
-from indicators.rsi import calc_rsi
-from indicators.macd import calc_macd
-from indicators.bollinger import calc_bollinger
-from indicators.flpercent import flpercent
-from indicators.hlpercent import hlpercent
-from indicators.volume import Volume_ratio
+from technical.indicators.rsi import calc_rsi
+from technical.indicators.macd import calc_macd
+from technical.indicators.bollinger import calc_bollinger
+from technical.indicators.flpercent import flpercent
+from technical.indicators.hlpercent import hlpercent
+from technical.indicators.volume import Volume_ratio
 
 
 def get_stock_data(symbol, period="1y"):

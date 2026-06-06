@@ -1,8 +1,8 @@
-from data_loader import get_stock_data
-from indicators.rename import rename_columns
+from technical.data_loader import get_stock_data
+from technical.indicators.rename import rename_columns
 from utils.file_io import setup_save_dir
 from utils.time_utils import get_timestamp
-from formatter import prepare_ai_data
+from technical.formatter import prepare_ai_data
 from symbols import SYMBOLS, period, days
 
 save_dir = setup_save_dir()

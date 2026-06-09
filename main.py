@@ -11,6 +11,7 @@ for symbol in SYMBOLS:
     df = get_stock_data(symbol, period=period)
     print(symbol, "raw df shape:", df.shape)
     ai_df = prepare_ai_data(df, days=days)
+    ai_df.index = ai_df.index.strftime("%Y-%m-%d")
     ai_df = rename_columns(ai_df)
 
     timestamp = get_timestamp()

@@ -9,7 +9,6 @@ save_dir = setup_save_dir()
 
 for symbol in SYMBOLS:
     df = get_stock_data(symbol, period=period)
-    print(symbol, "raw df shape:", df.shape)
     ai_df = prepare_ai_data(df, days=days)
     ai_df = rename_columns(ai_df)
 

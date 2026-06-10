@@ -4,6 +4,7 @@ from utils.file_io import setup_save_dir
 from utils.time_utils import get_timestamp
 from formatter import prepare_ai_data
 from symbols import SYMBOLS, period, days
+from utils.file_io import save_csv
 
 save_dir = setup_save_dir()
 
@@ -16,5 +17,5 @@ for symbol in SYMBOLS:
 
     timestamp = get_timestamp()
     filepath = save_dir / f"{symbol}_{timestamp}.csv"
-    ai_df.to_csv(filepath)
+    save_csv(ai_df, filepath)
     print(f"保存完了: {filepath}")

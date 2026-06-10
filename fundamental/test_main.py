@@ -1,3 +1,4 @@
+from symbols import SYMBOLS
 from fundamental.data_loader import get_financial_summary
 from fundamental.formatter import (
     select_columns,
@@ -6,15 +7,22 @@ from fundamental.formatter import (
 from fundamental.analyzer import (
     analyze_fundamentals,
 )
+from utils.file_io import setup_save_dir, save_csv
+from utils.time_utils import get_timestamp
 
 
-def main():
-    df = get_financial_summary("7203")
+def main(code: str):
+    df = get_financial_summary(code)
+    save_dir = setup_save_dir()
 
     df = select_columns(df)
     df = convert_numeric(df)
 
     result = analyze_fundamentals(df)
+    timestamp = get_timestamp()
+
+    filepath = save_dir / f"{code}_fundamental_{timestamp}.csv"
+    save_csv(result, filepath)
 
     print(
         result[
@@ -33,4 +41,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    for code in SYMBOLS:
+        main(code)

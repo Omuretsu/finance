@@ -4,15 +4,15 @@ from fundamental.formatter import (
     select_columns,
     convert_numeric,
 )
-from fundamental.analyzer import (
-    analyze_fundamentals,
-)
+from fundamental.analyzer import analyze_fundamentals
 from utils.file_io import setup_save_dir, save_csv
 from utils.time_utils import get_timestamp
+from utils.symbol_utils import to_jquants_code
 
 
 def main(code: str):
     df = get_financial_summary(code)
+
     save_dir = setup_save_dir()
 
     df = select_columns(df)
@@ -42,4 +42,5 @@ def main(code: str):
 
 if __name__ == "__main__":
     for code in SYMBOLS:
-        main(code)
+        jcode = to_jquants_code(code)
+        main(jcode)

@@ -39,7 +39,7 @@ def get_financial_summary(code: str) -> pd.DataFrame:
     }
 
     response = requests.get(
-        f"{BASE_URL}/fins/summary",
+        f"{BASE_URL}/v2/fins/summary",
         headers=headers,
         params=params,
         timeout=30,
@@ -49,10 +49,7 @@ def get_financial_summary(code: str) -> pd.DataFrame:
 
     data = response.json()
 
-    # レスポンス構造確認用
-    print(data.keys())
-
     # 実データ部分
-    records = data.get("financial_statements", [])
+    records = data.get("data", [])
 
     return pd.DataFrame(records)

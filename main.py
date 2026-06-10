@@ -3,7 +3,18 @@ from indicators.rename import rename_columns
 from utils.file_io import setup_save_dir
 from utils.time_utils import get_timestamp
 from formatter import prepare_ai_data
+
 from symbols import SYMBOLS, period, days
+
+try:
+    import config_local
+except ImportError:
+    config_local = None
+
+if config_local:
+    SYMBOLS = getattr(config_local, "SYMBOLS", SYMBOLS)
+    period = getattr(config_local, "period", period)
+    days = getattr(config_local, "days", days)
 
 save_dir = setup_save_dir()
 

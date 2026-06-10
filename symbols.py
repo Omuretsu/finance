@@ -1,7 +1,7 @@
 SYMBOLS = [
-    "8267.T",
+    "285A.T"
 ]
 
 period = "6mo"
 
-days = 30
+days = 7

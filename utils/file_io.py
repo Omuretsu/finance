@@ -9,4 +9,5 @@ def setup_save_dir():
 
 
 def save_csv(df, filepath):
+    df = df.reset_index()
     df.to_csv(filepath, index=False)
